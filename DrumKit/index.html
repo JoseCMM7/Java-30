@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Sounds Board</title>
+</head>
+<body>
+    <main>
+        <!-- Each .sound box is linked to an <audio> tag through the data-key attribute.
+             Pressing the matching key on the keyboard plays the sound of the box. -->
+        <div class="overlay container">
+            <div class="sound" data-key="a">
+                <h1>A</h1>
+                <span class="label">meow</span>
+            </div>
+            <div class="sound" data-key="b">
+                <h1>B</h1>
+                <span class="label">dog</span>
+            </div>
+            <div class="sound" data-key="c">
+                <h1>C</h1>
+                <span class="label">fire</span>
+            </div>
+            <div class="sound" data-key="d">
+                <h1>D</h1>
+                <span class="label">wind</span>
+            </div>
+        </div>
+
+        <!-- Audio sources matched to each key via data-key -->
+        <audio src="./audio/meow.mp3" data-key="a"></audio>
+        <audio src="./audio/dog.mp3" data-key="b"></audio>
+        <audio src="./audio/fire.mp3" data-key="c"></audio>
+        <audio src="./audio/wind.mp3" data-key="d"></audio>
+
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>
