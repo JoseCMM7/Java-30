@@ -1,0 +1,98 @@
+/* Reset default margins, paddings and use border-box sizing everywhere */
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page background and base text color */
+body {
+    background-color: rgba(0, 0, 0, 0.83);
+    color: aliceblue;
+}
+
+/* Centers the clock both vertically and horizontally on the viewport */
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Clock face: a circle that acts as the positioning context for the hands */
+.clock {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid rgb(156, 156, 156);
+    position: relative;
+}
+
+/* Second hand (thin red line) */
+.second {
+    position: absolute;
+    top: 50%;
+    margin-top: -70px;     /* pulls the hand up so its base sits at the center */
+    left: 50%;
+    width: 1px;
+    margin-left: -0.5px;   /* horizontal centering (half of width) */
+    height: 70px;
+    background-color: red;
+    border: 0px;
+}
+
+/* Minute hand (slightly thicker, yellow) */
+.minute {
+    position: absolute;
+    top: 50%;
+    margin-top: -70px;
+    left: 50%;
+    width: 1.5px;
+    margin-left: -0.75px;
+    height: 70px;
+    background-color: yellow;
+    border: 0px;
+}
+
+/* Hour hand (shorter and thicker) */
+.hour {
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    left: 50%;
+    width: 2.5px;
+    margin-left: 1.25px;
+    height: 40px;
+    background-color: black;
+    border: 0px;
+}
+
+/* All hands rotate around their bottom edge (the center of the clock).
+   The transition makes the movement smooth instead of jumping. */
+.second, .minute, .hour {
+    transform-origin: bottom center;
+    transition: transform 0.1s;
+}
+
+/* Numbers placed around the clock face.
+   The trick: rotate the element around the center, push it outward with
+   translateY, then rotate it back so the digit stays upright. */
+.number {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transform: rotate(calc(var(--d) * 30deg))
+               translateY(-85px)
+               rotate(calc(var(--d) * -30deg));
+}
