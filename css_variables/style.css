@@ -1,7 +1,7 @@
 
 :root {
     --blur: 3px;
-    --spacing: 70px;
+    --size: 70px;
     --color: rgb(210,0,0)
 }
 
@@ -14,7 +14,7 @@ body {
     margin: 0 auto;
     background-color: var(--color);
     margin-top: 50px;
-    padding: var(--spacing);
+    padding: var(--size);
     width: 50%;
     filter: blur(var(--blur));
 }

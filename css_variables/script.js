@@ -1,13 +1,13 @@
 
 const inputs = document.querySelectorAll('.options input');
 
-function hadleChange() {
+function handleChange() {
     const unit = this.dataset.unit ?? '';
     document.documentElement.style.setProperty(`--${this.name}`,`${this.value}${unit}`)
 }
 
 inputs.forEach(input => {
-    input.addEventListener('input', hadleChange);
+    input.addEventListener('input', handleChange);
 })
 
 /*
