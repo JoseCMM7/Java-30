@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS variables</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>
+        Changing CSS variables with JS
+    </h1>
+
+    <div class="options">
+        <label for="spacing-range">Spacing: </label>
+        <input type="range" min="3" id="spacing-range" name="spacing" data-unit="px" value="70px">
+        <br><br>
+        <label for="blur-range">Blur: </label>
+        <input type="range" min="0" max="10" id="blur-range" name="blur" data-unit="px" value="3px">
+        <br><br>
+        <label for="color-range">Color: </label>
+        <input type="Color" id="color-range" name="color" value="ff0000">
+    </div>
+
+    <div class="image">
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
